@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAUIWoL.Views.WoL"
+             Title="WoL">
+    <VerticalStackLayout>
+        <Label Text="Mac：" />
+        <Entry x:Name="macAddress"
+       Placeholder="请输入Mac"
+       TextChanged="macAddressOnEntryTextChanged"
+       Completed="macAddressOnEntryCompleted" />
+        <Label Text="IP/域名：" />
+        <Entry x:Name="ipAddress"
+       Placeholder="请输入IP/域名"
+       TextChanged="ipAddressOnEntryTextChanged"
+       Completed="ipAddressOnEntryCompleted" />
+        <Label Text="端口号：" />
+        <Entry x:Name="ipPort"
+       Placeholder="请输入端口号"
+       TextChanged="ipPortOnEntryTextChanged"
+       Completed="ipPortOnEntryCompleted" />
+        <Button Text="网络唤醒"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Clicked="WoLOnButtonClicked" />
+        <Label x:Name="Test" />
+    </VerticalStackLayout>
+</ContentPage>
