@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MAUIWoL.Views;
+using MAUIWoL.Data;
+using Microsoft.Extensions.Logging;
 
 namespace MAUIWoL;
 
@@ -15,10 +17,11 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
 
-#if DEBUG
-		builder.Logging.AddDebug();
-#endif
+        builder.Services.AddSingleton<WoL>();
+        builder.Services.AddTransient<AddConfigPage>();
 
-		return builder.Build();
+        builder.Services.AddSingleton<WoLConfigDatabase>();
+
+        return builder.Build();
 	}
 }

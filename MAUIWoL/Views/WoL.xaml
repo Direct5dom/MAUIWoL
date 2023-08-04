@@ -1,28 +1,56 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:MAUIWoL.Models"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             ios:Page.UseSafeArea="True"
              x:Class="MAUIWoL.Views.WoL"
-             Title="WoL">
-    <VerticalStackLayout>
-        <Label Text="Mac：" />
-        <Entry x:Name="macAddress"
-       Placeholder="请输入Mac"
-       TextChanged="macAddressOnEntryTextChanged"
-       Completed="macAddressOnEntryCompleted" />
-        <Label Text="IP/域名：" />
-        <Entry x:Name="ipAddress"
-       Placeholder="请输入IP/域名"
-       TextChanged="ipAddressOnEntryTextChanged"
-       Completed="ipAddressOnEntryCompleted" />
-        <Label Text="端口号：" />
-        <Entry x:Name="ipPort"
-       Placeholder="请输入端口号"
-       TextChanged="ipPortOnEntryTextChanged"
-       Completed="ipPortOnEntryCompleted" />
-        <Button Text="网络唤醒"
-                VerticalOptions="Center"
-                HorizontalOptions="Center"
-                Clicked="WoLOnButtonClicked" />
-        <Label x:Name="Test" />
-    </VerticalStackLayout>
+             Title="网络唤醒">
+    <ScrollView>
+        <VerticalStackLayout Padding="20"
+                             Spacing="10"
+                             VerticalOptions="StartAndExpand">
+            <Grid>
+                <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding Items}"
+                  SelectionMode="Single"
+                  SelectionChanged="CollectionView_SelectionChanged">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:WoLConfig">
+                            <Grid Padding="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <Label Text="MAC地址"/>
+                                <Label Text="IP地址"
+                                Grid.Row="1"/>
+                                <Label Text="端口"
+                                Grid.Row="2"/>
+
+                                <Label Text="{Binding MACAddress}"
+                                   Grid.Column="1"/>
+                                <Label Text="{Binding IPAddress}"
+                                   Grid.Column="1"
+                                   Grid.Row="1"/>
+                                <Label Text="{Binding IPPort}"
+                                   Grid.Column="1"
+                                   Grid.Row="2"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+            <Button Text="添加配置"
+                Clicked="OnConfigAdded"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
