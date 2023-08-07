@@ -8,8 +8,9 @@ namespace MAUIWoL;
 
 public partial class App : Application
 {
-    const int WindowWidth = 450;
-    const int WindowHeight = 800;
+    const int WindowWidth = 350;
+    const int WindowHeight = 500;
+    const int DisplayDensity = 2;
     public App()
     {
         InitializeComponent();
@@ -22,11 +23,13 @@ public partial class App : Application
 #if WINDOWS
             var mauiWindow = handler.VirtualView;
             var nativeWindow = handler.PlatformView;
+            var width = WindowWidth*DisplayDensity;
+            var height = WindowHeight*DisplayDensity;
             nativeWindow.Activate();
             IntPtr windowHandle = WinRT.Interop.WindowNative.GetWindowHandle(nativeWindow);
             WindowId windowId = Microsoft.UI.Win32Interop.GetWindowIdFromWindow(windowHandle);
             AppWindow appWindow = Microsoft.UI.Windowing.AppWindow.GetFromWindowId(windowId);
-            appWindow.Resize(new SizeInt32(WindowWidth, WindowHeight));
+            appWindow.Resize(new SizeInt32(width, height));
 #endif
         });
     }

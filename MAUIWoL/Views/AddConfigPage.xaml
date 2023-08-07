@@ -4,10 +4,10 @@
              x:Class="MAUIWoL.Views.AddConfigPage"
              xmlns:models="clr-namespace:MAUIWoL.Models"
              x:DataType="models:WoLConfig"
-             Title="唤醒电脑">
+             Title="网络唤醒">
     <ScrollView>
         <VerticalStackLayout Padding="20"
-                             Spacing="10"
+                             Spacing="8"
                              VerticalOptions="StartAndExpand">
             <Label Text="MAC地址" />
             <Entry  x:Name="macAddress"
@@ -29,13 +29,32 @@
                     Text="{Binding IPPort}" />
             <Label x:Name="Test" />
             <Button Text="网络唤醒"
-                    Clicked="WoLOnButtonClicked" />
-            <Button Text="保存"
-                    Clicked="OnSaveClicked" />
-            <Button Text="删除"
-                    Clicked="OnDeleteClicked" />
+                    Clicked="WoLOnButtonClicked"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                    TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Text="保存"
+                        Margin="0,0,4,0"
+                        Clicked="OnSaveClicked" 
+                        BackgroundColor="LightSeaGreen"
+                        TextColor="White"/>
+                <Button Text="删除"
+                        Margin="4,0,0,0"
+                        Clicked="OnDeleteClicked" 
+                        BackgroundColor="Firebrick"
+                        TextColor="White"
+                        Grid.Column="1"/>
+            </Grid>
+
             <Button Text="取消"
-                    Clicked="OnCancelClicked" />
+                    Clicked="OnCancelClicked"
+                    BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                    TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}" />
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

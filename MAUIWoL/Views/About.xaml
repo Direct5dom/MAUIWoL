@@ -2,27 +2,44 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MAUIWoL.Views.About"
-             Title="About">
+             Title="关于">
     <ScrollView>
         <VerticalStackLayout Padding="20"
                              Spacing="10"
                              VerticalOptions="StartAndExpand">
-            <Button Margin="0,10,0,0"
-                Text="Author: 司晓龙（SI Xiaolong）" 
+            <Button
+                Text="作者: 司晓龙（SI Xiaolong）" 
                 Command="{Binding TapCommand}"
-                CommandParameter="https://github.com/Direct5dom"/>
-            <Button Margin="0,10,0,0"
-                Text="Download Latest" 
+                CommandParameter="https://github.com/Direct5dom"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+            <Button
+                Text="下载最新版 (Download Latest)" 
                 Command="{Binding TapCommand}"
-                CommandParameter="https://github.com/Direct5dom/MAUIWoL/releases/latest"/>
-            <Button Margin="0,10,0,0"
+                CommandParameter="https://github.com/Direct5dom/MAUIWoL/releases/latest"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Margin="0,0,5,0"
                 Text="Repo" 
                 Command="{Binding TapCommand}"
-                CommandParameter="https://github.com/Direct5dom/MAUIWoL"/>
-            <Button Margin="0,10,0,0"
+                CommandParameter="https://github.com/Direct5dom/MAUIWoL"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+                Grid.Column="0"/>
+                <Button Margin="5,0,0,0"
                 Text="License" 
                 Command="{Binding TapCommand}"
-                CommandParameter="https://github.com/Direct5dom/MAUIWoL/blob/master/LICENSE"/>
+                CommandParameter="https://github.com/Direct5dom/MAUIWoL/blob/master/LICENSE"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
+                Grid.Column="1"/>
+            </Grid>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

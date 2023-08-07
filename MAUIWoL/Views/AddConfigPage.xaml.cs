@@ -147,7 +147,7 @@ public partial class AddConfigPage : ContentPage
         {
             // 发送数据
             socket.SendTo(packet, new IPEndPoint(ip, port));
-            Test.Text = macAddress.ToString() + ',' + domain.ToString() + ',' + port.ToString();
+            //Test.Text = macAddress.ToString() + ',' + domain.ToString() + ',' + port.ToString();
         }
 
         // 关闭Socket对象

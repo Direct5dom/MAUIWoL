@@ -5,10 +5,15 @@
              xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
              ios:Page.UseSafeArea="True"
              x:Class="MAUIWoL.Views.WoL"
-             Title="网络唤醒">
+             xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
+             Title="配置列表">
+
+    <ContentPage.Behaviors>
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource Gray950}}" />
+    </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout Padding="20"
-                             Spacing="10"
+                             Spacing="8"
                              VerticalOptions="StartAndExpand">
             <Grid>
                 <CollectionView 
@@ -18,7 +23,7 @@
                   SelectionChanged="CollectionView_SelectionChanged">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:WoLConfig">
-                            <Grid Padding="20">
+                            <Grid Padding="8">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
                                     <ColumnDefinition />
@@ -49,7 +54,9 @@
                 </CollectionView>
             </Grid>
             <Button Text="添加配置"
-                Clicked="OnConfigAdded"/>
+                Clicked="OnConfigAdded"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
 
         </VerticalStackLayout>
     </ScrollView>

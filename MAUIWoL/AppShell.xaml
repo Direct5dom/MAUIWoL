@@ -1,25 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="MAUIWoL.AppShell"
-xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-       xmlns:controls="clr-namespace:MAUIWoL.Controls"
-       xmlns:sys="clr-namespace:System;assembly=netstandard"
-       xmlns:views="clr-namespace:MAUIWoL.Views"
-           FlyoutBackgroundImage="photo.jpg"
-       FlyoutBackgroundImageAspect="AspectFill"
-       FlyoutHeaderBehavior="CollapseOnScroll">
+<Shell  x:Class="MAUIWoL.AppShell"
+        xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+        xmlns:controls="clr-namespace:MAUIWoL.Controls"
+        xmlns:sys="clr-namespace:System;assembly=netstandard"
+        xmlns:views="clr-namespace:MAUIWoL.Views"
+        FlyoutBackgroundImageAspect="AspectFill"
+        FlyoutHeaderBehavior="CollapseOnScroll"
+        ForegroundColor="White"
+        TitleColor="White"
+        DisabledColor="#B4FFFFFF"
+        UnselectedColor="#95FFFFFF">
 
-    <Shell.FlyoutHeader>
-        <controls:FlyoutHeader />
-    </Shell.FlyoutHeader>
-
-    <FlyoutItem Route="Wake on LAN"
-                FlyoutDisplayOptions="AsMultipleItems">
-        <Tab Title="Domestic"
-             Route="domestic">
-        </Tab>
-    </FlyoutItem>
 
     <ShellContent Route="wol"
                   Title="WoL"
@@ -27,5 +19,4 @@ xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     <ShellContent Route="about"
                   Title="About"
                   ContentTemplate="{DataTemplate views:About}" />
-
 </Shell>
