@@ -21,6 +21,12 @@
                 CommandParameter="https://github.com/Direct5dom/MAUIWoL/releases/latest"
                 BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
                 TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
+            <Button
+                Text="Telegram" 
+                Command="{Binding TapCommand}"
+                CommandParameter="https://t.me/winuiwol"
+                BackgroundColor="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource White}}"
+                TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"/>
 
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -42,6 +48,7 @@
                 TextColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource Gray950}}"
                 Grid.Column="1"/>
             </Grid>
+
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
