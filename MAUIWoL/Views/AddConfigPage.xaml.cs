@@ -46,6 +46,11 @@ public partial class AddConfigPage : ContentPage
     {
         await Shell.Current.GoToAsync("..");
     }
+
+    void configNameOnEntryTextChanged(object sender, TextChangedEventArgs e)
+    {
+    }
+
     void macAddressOnEntryTextChanged(object sender, TextChangedEventArgs e)
     {
     }
@@ -59,6 +64,10 @@ public partial class AddConfigPage : ContentPage
     }
 
     void macAddressOnEntryCompleted(object sender, EventArgs e)
+    {
+    }
+
+    void configNameOnEntryCompleted(object sender, EventArgs e)
     {
     }
 

@@ -7,6 +7,8 @@
         <VerticalStackLayout Padding="20"
                              Spacing="10"
                              VerticalOptions="StartAndExpand">
+            <Label Text="网络唤醒（Wake on LAN）" VerticalOptions="Center" HorizontalOptions="Center"/>
+
             <Button
                 Text="作者: 司晓龙（SI Xiaolong）" 
                 Command="{Binding TapCommand}"

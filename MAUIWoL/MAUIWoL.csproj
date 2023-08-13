@@ -5,6 +5,7 @@
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
+    <AndroidPackageFormat>apk</AndroidPackageFormat>
 		<RootNamespace>MAUIWoL</RootNamespace>
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
@@ -14,7 +15,7 @@
 		<ApplicationTitle>MAUIWoL</ApplicationTitle>
 
 		<!-- App Identifier -->
-		<ApplicationId>com.companyname.mauiwol</ApplicationId>
+		<ApplicationId>maui.sixiaolong.mauiwol</ApplicationId>
 		<ApplicationIdGuid>19fdf417-4d2b-46bf-a2f4-e50d7e748d6e</ApplicationIdGuid>
 
 		<!-- Versions -->

@@ -9,7 +9,7 @@
              Title="配置列表">
 
     <ContentPage.Behaviors>
-        <mct:StatusBarBehavior StatusBarColor="{StaticResource Gray950}}" />
+        <mct:StatusBarBehavior StatusBarColor="{StaticResource Gray950}" />
     </ContentPage.Behaviors>
     <ScrollView>
         <VerticalStackLayout Padding="20"
@@ -32,22 +32,28 @@
                                     <RowDefinition />
                                     <RowDefinition />
                                     <RowDefinition />
+                                    <RowDefinition />
                                 </Grid.RowDefinitions>
 
-                                <Label Text="MAC地址"/>
-                                <Label Text="IP地址"
+                                <Label Text="配置名称"/>
+                                <Label Text="MAC地址"
                                 Grid.Row="1"/>
-                                <Label Text="端口"
+                                <Label Text="IP地址"
                                 Grid.Row="2"/>
+                                <Label Text="端口"
+                                Grid.Row="3"/>
 
-                                <Label Text="{Binding MACAddress}"
+                                <Label Text="{Binding Name}"
                                    Grid.Column="1"/>
-                                <Label Text="{Binding IPAddress}"
+                                <Label Text="{Binding MACAddress}"
                                    Grid.Column="1"
                                    Grid.Row="1"/>
-                                <Label Text="{Binding IPPort}"
+                                <Label Text="{Binding IPAddress}"
                                    Grid.Column="1"
                                    Grid.Row="2"/>
+                                <Label Text="{Binding IPPort}"
+                                   Grid.Column="1"
+                                   Grid.Row="3"/>
                             </Grid>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
